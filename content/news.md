@@ -1,1 +1,5 @@
-**2026** | **[EMNLP]** Co-first author, In submission.
+### EMNLP 2026
+
+**Co-first author**
+
+In submission
