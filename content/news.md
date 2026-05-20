@@ -1,0 +1,4 @@
+- **2026** | **[Publication]** First-author paper accepted by CogSci 2026 (CCF-B), not yet published.
+- **2026** | **[Conference]** Contributed to an ICML 2026 paper on embodied task-oriented spatiotemporal reasoning.
+- **2026** | **[Conference]** Contributed to an AAAI 2026 Oral paper on task-oriented spatiotemporal reasoning.
+- **2023** | **[Education]** Started undergraduate study in Computer Science and Technology at Qingdao University.

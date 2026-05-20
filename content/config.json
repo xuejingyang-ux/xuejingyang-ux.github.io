@@ -1,0 +1,89 @@
+{
+  "site": {
+    "title": "Jingyang Xue | Academic Homepage",
+    "description": "Jingyang Xue's academic homepage",
+    "author": "Jingyang Xue",
+    "language": "en"
+  },
+  "profile": {
+    "avatar": "static/assets/img/photo.png",
+    "name": "Jingyang Xue",
+    "nameLocal": "薛憬阳",
+    "role": "Undergraduate Student",
+    "affiliation": [
+      "School of Computer Science and Technology",
+      "Qingdao University"
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/xuejingyang-ux",
+        "style": "primary"
+      },
+      {
+        "label": "Email",
+        "url": "mailto:xuejingyang@qdu.edu.cn",
+        "style": "secondary"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Multimodal Large Models · Artificial Intelligence",
+    "title": "Jingyang Xue",
+    "titleLocal": "薛憬阳",
+    "tagline": "Exploring multimodal intelligence, video understanding, and embodied spatiotemporal reasoning.",
+    "taglineLocal": "探索多模态智能、视频理解与具身任务时空推理。"
+  },
+  "sections": [
+    {
+      "id": "about",
+      "title": "About",
+      "subtitle": "简介",
+      "file": "content/about.md",
+      "type": "hero"
+    },
+    {
+      "id": "news",
+      "title": "News",
+      "subtitle": "动态",
+      "file": "content/news.md",
+      "type": "timeline"
+    },
+    {
+      "id": "research",
+      "title": "Research",
+      "subtitle": "研究方向",
+      "file": "content/research.md",
+      "type": "research"
+    },
+    {
+      "id": "publications",
+      "title": "Publications",
+      "subtitle": "论文",
+      "file": "content/publications.md",
+      "type": "publications"
+    },
+    {
+      "id": "projects",
+      "title": "Projects",
+      "subtitle": "项目",
+      "file": "content/projects.md",
+      "type": "projects"
+    },
+    {
+      "id": "honors",
+      "title": "Honors",
+      "subtitle": "荣誉",
+      "file": "content/honors.md",
+      "type": "honors"
+    },
+    {
+      "id": "contact",
+      "title": "Contact",
+      "subtitle": "联系方式",
+      "file": "content/contact.md",
+      "type": "contact"
+    }
+  ],
+  "footer": "© {year} Jingyang Xue. Open sourced under the MIT License."
+}

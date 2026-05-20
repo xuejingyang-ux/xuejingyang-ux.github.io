@@ -1,0 +1,5 @@
+- First-author paper accepted by CogSci 2026 (CCF-B), not yet published.
+- Core member, National College Student Innovation and Entrepreneurship Training Program project.
+- Patent application in progress.
+- Software copyright, first software copyright holder.
+- CET-6.
