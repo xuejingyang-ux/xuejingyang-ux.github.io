@@ -185,21 +185,49 @@ const renderSections = async (config) => {
   content.innerHTML = rendered.join("\n");
 };
 
+const setActiveNav = (id) => {
+  const navLinks = Array.from(document.querySelectorAll(".side-nav a"));
+
+  navLinks.forEach((link) => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+  });
+};
+
+const visibleSectionByHash = (sections) => {
+  const id = decodeURIComponent(window.location.hash.replace(/^#/, ""));
+  const section = sections.find((item) => item.id === id);
+  if (!section) return null;
+
+  const rect = section.getBoundingClientRect();
+  const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+  return isVisible ? section : null;
+};
+
 const activateNav = () => {
   const navLinks = Array.from(document.querySelectorAll(".side-nav a"));
   const sections = navLinks
     .map((link) => document.querySelector(link.getAttribute("href")))
     .filter(Boolean);
-  const scrollPosition = window.scrollY + 140;
-  let currentId = sections[0]?.id;
+  if (!sections.length) return;
 
-  for (const section of sections) {
-    if (section.offsetTop <= scrollPosition) currentId = section.id;
+  const hashSection = visibleSectionByHash(sections);
+  if (hashSection) {
+    setActiveNav(hashSection.id);
+    return;
   }
 
-  navLinks.forEach((link) => {
-    link.classList.toggle("active", link.getAttribute("href") === `#${currentId}`);
-  });
+  const activationLine = window.innerHeight * 0.38;
+  let currentId = sections[0].id;
+
+  for (const section of sections) {
+    const rect = section.getBoundingClientRect();
+    if (rect.top <= activationLine) currentId = section.id;
+  }
+
+  const pageBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+  if (pageBottom) currentId = sections[sections.length - 1].id;
+
+  setActiveNav(currentId);
 };
 
 const boot = async () => {
@@ -213,8 +241,14 @@ const boot = async () => {
     renderProfile(config.profile);
     renderNav(config.sections);
     await renderSections(config);
+    document.querySelectorAll(".side-nav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        setActiveNav(link.getAttribute("href").replace(/^#/, ""));
+      });
+    });
     activateNav();
     window.addEventListener("scroll", activateNav, { passive: true });
+    window.addEventListener("hashchange", activateNav);
   } catch (error) {
     document.getElementById("content").innerHTML = `<div class="error card"><strong>Content loading failed.</strong><br>${escapeHtml(error.message)}</div>`;
   }
