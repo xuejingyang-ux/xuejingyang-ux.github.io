@@ -1,1 +1,1 @@
-**ECCV 2026** Co-first author, In submission
+**2026** | **[EMNLP]** Co-first author, In submission.
