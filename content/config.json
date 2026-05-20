@@ -47,7 +47,7 @@
       "title": "News",
       "subtitle": "动态",
       "file": "content/news.md",
-      "type": "timeline"
+      "type": "projects"
     },
     {
       "id": "research",
